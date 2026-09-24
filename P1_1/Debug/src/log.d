@@ -1,5 +1,4 @@
-src/log.o: ../src/log.c \
- /home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/log.h \
- /home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/riscv_types.h
-/home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/log.h:
-/home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/riscv_types.h:
+src/log.o: ../src/log.c /home/atcsol/git/PDI/P1_1/include/log.h \
+ /home/atcsol/git/PDI/P1_1/include/riscv_types.h
+/home/atcsol/git/PDI/P1_1/include/log.h:
+/home/atcsol/git/PDI/P1_1/include/riscv_types.h:

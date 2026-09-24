@@ -1,7 +1,8 @@
-src/main.o: ../src/main.c \
- /home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/log.h \
- /home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/riscv_types.h \
- /home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/factorial.h
-/home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/log.h:
-/home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/riscv_types.h:
-/home/atcsol/git/Programaci-n-de-dispositivos-e-interfaces/P0/include/factorial.h:
+src/main.o: ../src/main.c /home/atcsol/git/PDI/P1_1/include/riscv_types.h \
+ /home/atcsol/git/PDI/P1_1/include/gpio_drv.h \
+ /home/atcsol/git/PDI/P1_1/include/riscv_types.h \
+ /home/atcsol/git/PDI/P1_1/include/log.h
+/home/atcsol/git/PDI/P1_1/include/riscv_types.h:
+/home/atcsol/git/PDI/P1_1/include/gpio_drv.h:
+/home/atcsol/git/PDI/P1_1/include/riscv_types.h:
+/home/atcsol/git/PDI/P1_1/include/log.h:
