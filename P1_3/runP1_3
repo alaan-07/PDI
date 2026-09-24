@@ -1,0 +1,4 @@
+gnome-terminal -- picsimlab
+sleep 1
+spike --isa=RV32IM  --real-time-clint -m0x40000000:0x100000,0xFFFF0000:0x10000 ./Debug/P1_3
+

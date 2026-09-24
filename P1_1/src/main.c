@@ -28,7 +28,6 @@ int main()
 				printf("Turn LED0 on\n");
 				input |= LED_0_MASK;
 				gpio_write(input);
-			}
 	   }
 	   else
 	   {
