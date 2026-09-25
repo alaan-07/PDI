@@ -26,7 +26,7 @@ OBJS += \
 src/%.o: ../src/%.c src/subdir.mk
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross GCC Compiler'
-	riscv-gaisler-elf-gcc -nostdlib -march=rv32im -mabi=ilp32 -I"/home/atcsol/eclipse-workspace/P1_2/include" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	riscv-gaisler-elf-gcc -nostdlib -march=rv32im -mabi=ilp32 -I"/home/atcsol/git/PDI/P1_3/include" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
