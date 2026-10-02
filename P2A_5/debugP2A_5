@@ -1,0 +1,2 @@
+gnome-terminal -- spike -H --isa=RV32IM --rbb-port=9824 -m0x40000000:0x100000,0xFFFF0000:0x10000 ./Debug/P2A_5
+gnome-terminal -- openocd -f spike.cfg
