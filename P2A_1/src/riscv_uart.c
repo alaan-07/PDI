@@ -53,21 +53,3 @@ void riscv_uart_disable_TX()
 {
 	pUART_REGS->Ctrl &= ~RISCV_UART_TXE;
 }
-
-int8_t riscv_print_string(char* str)
-{
-
-    int8_t error=0;
-    uint32_t i = 0;
-
-    while( str[i] != '\0' && (!error) )
-    {
-        error = riscv_putchar( str[i] );
-        i++;
-    }
-
-    while(!riscv_uart_tx_fifo_is_empty())
-		;  // empty statement
-
-return error;
-}
