@@ -1,56 +1,30 @@
 #include "riscv_types.h"
 #include "riscv_uart.h"
-#include "gpio_drv.h"
-
-#include "log.h"
 
 int main()
 {
-	uint32_t dir, input;
-	uint32_t bt0_current, bt0_previous;
-	uint32_t bt1_current, bt1_previous;
+	char * pchar="Device Programming\n";
 
-	printf("P2_3\n");
-
-	// Enable output on bits 19..16
-	dir = gpio_get_direction();
-	dir |= 0x000F0000;
-	gpio_set_direction( dir );
-
-	bt0_current = 0;
-
+	// TX enable
 	riscv_uart_enable_TX();
-	riscv_print_string("Programacíón de Dispositivos\n");
 
-	while(1)
-	{
-		input = gpio_read();
-		bt0_previous = bt0_current;
-		bt0_current = input & BT_0_MASK;
+	// First test, console output
+	riscv_putchar('P');
+	riscv_putchar('2');
+	riscv_putchar('\n');
 
-		bt1_previous = bt1_current;
-		bt1_current = input & BT_1_MASK;
+	// print string test
+	riscv_print_string(pchar);
 
-		if ( bt0_current && !bt0_previous )
-		// if ( !bt0_current && bt0_previous )
-		{
-			riscv_print_string("BT0 press...\n");
-		}
+	// Wait until TX fifo is empty
+	do {
+		// do nothing
+	} while( !riscv_uart_tx_fifo_is_empty() );
 
-		//if ( bt0_current && !bt0_previous )
-		if ( !bt0_current && bt0_previous )
-		{
-			riscv_print_string("BT0 release...\n");
-		}
+	/* This is the same using a while loop
+	while(!riscv_uart_tx_fifo_is_empty())
+		; // empty statement
+	*/
 
-		if ( bt1_current && !bt1_previous )
-		// if ( !bt1_current && bt1_previous )
-		{
-			riscv_print_string("BT1 press...\n");
-		}
-	}
-
-	return 0;
+return 0;
 }
-
-
